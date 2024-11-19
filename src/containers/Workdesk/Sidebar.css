@@ -1,0 +1,183 @@
+/* Hide show sidebar, button */
+.sidebar-button {
+  position: absolute;
+  width: 1.8rem;
+  height: 1.8rem;
+  left: 10vw;
+  top: 70px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--element-color-alt1);
+  cursor: pointer;
+  padding: 0.2rem;
+  line-height: 1.4;
+  font-family: var(--font-two);
+}
+.sidebar-button:hover {
+  background-color: var(--border-color);
+}
+
+.sidebar-button p {
+  background-color: var(--element-color-alt2);
+  font-family: var(--font-two);
+  border-radius: 25px;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.sidebar-reset-button {
+  border-radius: 10px;
+  background-color: var(--element-color-alt2);
+  width: fit-content;
+  height: 100%;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  padding: 0.1rem 0.7rem;
+  cursor: pointer;
+  border: 1px var(--element-color-alt2) solid;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.sidebar-reset-button:hover {
+  background-color: var(--element-color-alt);
+  border: 1px var(--border-color) solid;
+}
+
+.sidebar-reset-button:active {
+  transform: translateY(1.5px);
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.sidebar-save-button,
+.sidebar-trash-button {
+  border-radius: 10px;
+  background-color: var(--element-color-alt2);
+  width: fit-content;
+  height: 100%;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  padding: 0.3em 1.5rem;
+  cursor: pointer;
+  border: 1px var(--element-color-alt2) solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  stroke: var(--text-color);
+}
+
+.sidebar-save-button:hover {
+  background-color: var(--element-color-alt);
+  border: 1px var(--border-color) solid;
+  stroke: var(--green);
+}
+
+.sidebar-trash-button:hover {
+  background-color: var(--element-color-alt);
+  border: 1px var(--border-color) solid;
+  stroke: var(--red);
+}
+.sidebar-save-button:active,
+.sidebar-trash-button:active {
+  transform: translateY(1.5px);
+}
+
+.sidebar-container {
+  height: 100%;
+  width: max-content;
+  background-color: var(--element-color-alt1);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.sidebar-tools {
+  background-color: var(--element-color);
+  height: 100%;
+  width: max-content;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* Sidebar and button animations */
+
+@keyframes hideSidebar {
+  0% {
+    transform: inherit;
+    margin-right: inherit;
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-10vw);
+    margin-right: -9vw;
+    opacity: 0;
+  }
+}
+
+@keyframes showSidebar {
+  0% {
+    transform: translateX(-10vw);
+    margin-right: -9vw;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: inherit;
+    margin-right: inherit;
+    opacity: 1;
+  }
+}
+
+@keyframes hideSidebarButton {
+  0% {
+    transform: inherit;
+    margin-right: inherit;
+  }
+  100% {
+    transform: translateX(-10vw);
+    margin-right: -9vw;
+  }
+}
+@keyframes showSidebarButton {
+  0% {
+    transform: translateX(-10vw);
+    margin-right: -9vw;
+  }
+  100% {
+    transform: inherit;
+    margin-right: inherit;
+  }
+}
+
+.hidden {
+  animation: hideSidebar 0.5s forwards;
+}
+.shown {
+  animation: showSidebar 0.5s forwards;
+}
+.hidden-button {
+  animation: hideSidebarButton 0.5s forwards;
+}
+.shown-button {
+  animation: showSidebarButton 0.5s forwards;
+}

@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Mate:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --element-color: #521935;
+  --modal-color: #00000050;
+  --header-color: #00000020;
+  --element-color-alt: #4e4351;
+  --element-color-alt1: #3d1a33;
+  --element-color-alt2: #873643;
+  --element-color-alt3: #ac4657;
+  --border-color: #efefdc75;
+  --border-color-alt: #efefdc25;
+  --text-color: #efefdcc0;
+  --text-color-alt: #521935;
+  --text-color-white: whitesmoke;
+  --gray: #2b2a33;
+  --green: rgba(172, 255, 47, 0.75);
+  --red: rgba(255, 0, 0, 0.75);
+  --delete-hover-color: linear-gradient(90deg, rgba(61, 26, 51, 1) 0%, rgba(208, 54, 54, 0.8) 100%);
+  --add-new-column: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.5) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  --dynamic-font-size: 1rem;
+  --main-font: Verdana, Geneva, Tahoma, sans-serif;
+  --alt-font: 'Playfair Display', serif;
+  --font-one: 'Mate', serif;
+  --font-two: 'Courier New', Courier, monospace;
+  --font-three: 'Dancing Script', cursive;
+  --font-four: 'Lugrasimo', cursive;
+  --font-five: 'Shantell Sans', cursive;
+  --font-six: var(--main-font);
+  --font-seven: var(--alt-font);
+
+  font-family: var(--main-font);
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  background-repeat: no-repeat;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  overflow: auto;
+  background-image: url(./assets/Background.svg),
+    linear-gradient(to right top, #521935, #3d1a33, #2a192b, #1a161f, #0f0f0f);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+input {
+  background-color: var(--gray);
+  color: var(--text-color);
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1s forwards;
+}

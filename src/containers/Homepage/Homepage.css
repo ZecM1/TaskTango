@@ -1,0 +1,119 @@
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-family: var(--font-three);
+  font-size: 12rem;
+  height: fit-content;
+  width: fit-content;
+  line-height: 0.8;
+  padding-bottom: 5%;
+  overflow: visible;
+
+  background: -webkit-linear-gradient(left, #ab4f4f, #953f4a, #7f3144, #953f4a, #ab4f4f);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Text above the title */
+.welcome {
+  margin-left: -35vw;
+  font-family: var(--font-three);
+  font-size: 1.7rem;
+}
+
+/* Holds two buttons on the Homepage*/
+.actionButtonContainer {
+  font-family: var(--main-font);
+  gap: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.actionButton p {
+  padding: 0.3rem;
+  font-size: 1rem;
+  font-family: var(--main-font);
+}
+/* Just the Homepage buttons */
+.homepageButton {
+  width: 10rem;
+  height: 3rem;
+}
+.homepageButton p {
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+button,
+.animateButton {
+  padding: 0.6em 1.2em;
+  font-weight: 500;
+  color: #fff4f3;
+  cursor: pointer;
+  background-color: var(--element-color);
+}
+
+.animateButton {
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+
+  transition: 0.1s;
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+}
+.animateButton p {
+  transition: 0.1s;
+  text-align: center;
+  font-family: var(--font-six);
+}
+
+.animateButton:hover,
+.animateButton p:hover {
+  border-color: var(--border-color);
+}
+
+.animateButton p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(45deg) translate(0);
+  transition: 0.2s;
+  filter: blur(0px);
+}
+
+.animateButton:hover p::before {
+  transform: skewX(45deg) translate(140%);
+}
+
+button:active {
+  transition: 0.2s;
+  transform: translateY(2px);
+}
+
+.note {
+  text-align: center;
+  width: 65%;
+  padding: 3rem;
+  color: var(--element-color-alt3);
+  font-size: 1.1rem;
+  font-weight: bold;
+}

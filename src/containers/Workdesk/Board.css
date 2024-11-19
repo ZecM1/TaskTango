@@ -1,0 +1,259 @@
+/* 
+ column, column-container, column-block, column-title, column-text, column-add-text, column-plus
+*/
+
+.board-column {
+  width: 100%;
+  height: 80vh;
+  background-color: none;
+  display: flex;
+  gap: 1rem;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  color: var(--text-color-white);
+}
+.board-column-title:focus,
+.board-column-text:focus {
+  outline: 1px solid var(--element-color-alt3);
+}
+
+.board-column-container {
+  border-radius: 10px;
+  background-color: var(--element-color-alt2);
+  min-width: 8rem;
+  max-width: 50vw;
+  height: fit-content;
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.board-column-block {
+  border-radius: 10px;
+  background-color: var(--element-color);
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-column-block-elements {
+  justify-self: flex-end;
+  transform: translateY(-0.4rem);
+}
+
+.board-column-title {
+  border-radius: 10px;
+  min-height: fit-content;
+  text-align: center;
+  margin: 0.6rem;
+  margin-top: 0;
+  cursor: pointer;
+  transform: translateY(-0.4rem);
+  overflow-x: hidden;
+}
+
+.board-column-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.board-column-text,
+.board-column-delete {
+  background-origin: border-box;
+  background-repeat: no-repeat;
+}
+
+.board-column-text,
+.board-column-text[contenteditable] {
+  text-align: left;
+  text-wrap: break-word;
+  word-break: normal;
+  overflow-wrap: break-word;
+  margin: 0.3rem -2px 0.3rem 0.3rem;
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  background-color: var(--element-color-alt1);
+  flex: 1;
+  height: fit-content;
+  width: 80%;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-left: 1px solid var(--border-color-alt);
+  border-top: 1px solid var(--border-color-alt);
+  border-bottom: 1px solid var(--border-color-alt);
+  border-radius: 15px 0 0 15px;
+}
+.board-column-text[contenteditable] {
+  cursor: pointer;
+  user-select: text;
+  pointer-events: auto;
+}
+.board-column-text:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--element-color-alt3);
+}
+
+/* Creates focus outline on the delete element */
+.fake-focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--element-color-alt3);
+  clip-path: inset(-10px -10px -10px 1px);
+}
+
+.board-column-delete {
+  margin-left: -4px;
+  border-right: 1px solid var(--border-color-alt);
+  border-top: 1px solid var(--border-color-alt);
+  border-bottom: 1px solid var(--border-color-alt);
+  margin: 0.3rem 0.3rem 0.3rem 0;
+  flex-basis: 1;
+  min-height: 100%;
+  max-height: 5.2rem;
+  width: 22%;
+  border-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  background-color: var(--element-color-alt1);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.board-column-delete:hover {
+  border-right: 1px solid var(--delete-hover-color);
+  background-image: var(--delete-hover-color);
+}
+.board-column-delete:active {
+  transform: scaleX(0.9);
+  transform-origin: left;
+}
+
+.board-column-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0.4rem 0 0.4rem;
+  text-align: center;
+  font-size: 0.8rem;
+  flex-wrap: nowrap;
+}
+
+/* Delete and Move columns buttons */
+.board-column-block-delete {
+  align-self: flex-end;
+  transform: translate(0.4rem, -0.4rem);
+  height: 1.7rem;
+  margin: 0;
+  transform: scale(-5.2rem);
+}
+.board-column-block-delete:hover {
+  cursor: pointer;
+}
+.board-column-block-delete:active {
+  transition: 0.1s;
+  transform: translate(0.4rem, -0.4rem) scale(0.95);
+}
+.board-column-move {
+  text-align: center;
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  color: var(--text-color);
+}
+.board-column-move p {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: var(--element-color-alt2);
+  border: 2px solid var(--element-color-alt1);
+  font-family: var(--font-two);
+  font-size: 1rem;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 1.3;
+  cursor: pointer;
+}
+.board-column-move p:hover {
+  border: 2px solid var(--border-color);
+}
+
+.board-column-move p:active {
+  transform: scale(0.95);
+}
+.board-column-move p.disabled {
+  background-color: var(--border-color);
+  border: 2px solid var(--border-color);
+  cursor: default;
+}
+
+.board-column-move p.disabled:active {
+  transform: none;
+}
+
+.board-column-add-text {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  width: 50%;
+  background-color: var(--element-color-alt2);
+  text-align: center;
+  border: solid 2px var(--element-color-alt2);
+}
+.board-column-add-text:hover {
+  background-color: var(--element-color-alt);
+  border: solid 2px var(--element-color-alt);
+}
+.board-column-add-text:active {
+  transform: scale(0.95);
+}
+.board-add-new-column {
+  font-family: monospace;
+  width: 3rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 200px 200px 0;
+  background-image: var(--add-new-column);
+  font-size: 2rem;
+  color: var(--element-color-alt1);
+  opacity: 0.2;
+  transition: opacity 0.2s ease-in-out;
+  margin-top: 0.4rem;
+}
+.board-add-new-column:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.board-add-new-column:active {
+  opacity: 1;
+  transform: scale(0.95);
+}
+
+/* Custom Scrollbar */
+.custom-scroll {
+  overflow-y: auto;
+  max-height: 52vh;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-right: 5px;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* Firefox specific styles */
+.custom-scroll {
+  scrollbar-width: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.8) transparent; /* thumb and track color */
+}
