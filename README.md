@@ -1,9 +1,5 @@
 # React + Vite Project - Task Tango
 
-Fix me up later
-
-# JAVASCRIPT Project - Jamb Remake
-
 ## NOTE
 
 This project was created to not only show what I have learned and further improve my knowledge of React but to also serve as a base for my learning of backend and databases as I intend to expand on it in the future.
