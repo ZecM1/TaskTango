@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { Homepage } from './Homepage/Homepage';
 import { Workdesk } from './Workdesk/Workdesk';
 
@@ -42,7 +42,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path='/' element={<Navigate replace to='home' />} />
         <Route path='*' element={<Navigate to='home' replace />} />
@@ -60,7 +60,7 @@ function App() {
         {/* If user is authorized generate routes, else just show homepage */}
         {data ? routes : undefined}
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
