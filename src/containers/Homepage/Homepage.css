@@ -7,6 +7,7 @@
 }
 
 h1 {
+  display: block;
   font-family: var(--font-three);
   font-size: 12rem;
   height: fit-content;
@@ -116,4 +117,24 @@ button:active {
   color: var(--element-color-alt3);
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    display: block;
+    font-family: var(--font-three);
+    font-size: 7rem;
+    height: fit-content;
+    width: fit-content;
+    line-height: 0.8;
+    padding-bottom: 5%;
+    overflow: visible;
+  }
+  .actionButtonContainer {
+    padding-top: 3rem;
+  }
+  .note {
+    padding: 0;
+    padding-top: 3rem;
+  }
 }
