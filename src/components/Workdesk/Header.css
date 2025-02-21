@@ -59,3 +59,9 @@
   opacity: 1;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .workdeskNameContainer {
+    display: none;
+  }
+}
